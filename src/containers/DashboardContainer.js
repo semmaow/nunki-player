@@ -45,7 +45,7 @@ class DashboardContainer extends Component {
   }
   handleSubmit(event) {
     alert('A name was submitted: ' + this.state.name);
-    uploadSong(this.state.name, this.state.artist, this.state.album, this.state.order, this.state.duration, this.state.source, this.state.artwork);
+    uploadSong(this.state.name, this.state.artist, this.state.album, this.state.order, this.state.source, this.state.artwork);
     event.preventDefault();
   }
 
