@@ -40,25 +40,39 @@ export function postPlaylist(playlistName) {
 }
 
 export function uploadSong(name, artist, album, order, source, artwork) {
-    let formData = new FormData();
-    console.log(source);
-    //console.log(artwork);
+    var formData = new FormData();
+    formData.append("source", source);
+    formData.append("artwork", artwork);
     formData.append("name", name);
     formData.append("artist", artist);
     formData.append("album", album);
     formData.append("order", order);
-    formData.append("source", source);
-    formData.append("artwork", artwork);
-
+    console.log(formData);
     return axios.post('https://nunki-music.appspot.com/songs', formData, {
-      headers: {"Content-Type": "multipart/form-data"}
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    }).then(function (response) {
+        console.log(response);
+        alert(response);
+    });
+}
+
+export function putSongOnPlaylist(playlistId, songId, songOrder) {
+    let data = JSON.stringify({
+      order: songOrder
+    });
+    return axios.put("https://nunki-music.appspot.com/playlists/" + playlistId + "/songs/" + songId, data, {
+      headers: {"Content-Type": "application/json"}
     })
     .then(function (response) {
       console.log(response);
     })
     .catch(function (error) {
-      console.log("uploadSong error");
+      console.log("postPlaylist error");
       console.log(error);
     });
 }
-
+export function deleteSongFromPlaylist(playlistId, songId) {
+    return axios.delete("https://nunki-music.appspot.com/playlists/" + playlistId + "/songs/" + songId);
+}
