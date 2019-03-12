@@ -69,7 +69,7 @@ export function putSongOnPlaylist(playlistId, songId, songOrder) {
       console.log(response);
     })
     .catch(function (error) {
-      console.log("postPlaylist error");
+      console.log("putSongOnPlaylist error");
       console.log(error);
     });
 }
