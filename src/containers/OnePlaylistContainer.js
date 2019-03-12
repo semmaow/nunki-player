@@ -16,7 +16,6 @@ class OnePlaylistContainer extends Component {
     componentDidMount() {
         fetchPlaylistById(this.playlistId).then(data => {
             this.setState({ playlistSongs: data.data[0].songs })
-            console.log(this); 
         });
     }
 
@@ -30,16 +29,6 @@ class OnePlaylistContainer extends Component {
     renderListItem(playlistSong) {
         const songSelfArray = playlistSong.songInfo.self.split('/');
         const songId = songSelfArray[songSelfArray.length - 1];
-        const Emoji = props => (
-            <span
-                className="emoji"
-                role="img"
-                aria-label={props.label ? props.label : ""}
-                aria-hidden={props.label ? "false" : "true"}
-            >
-                {props.symbol}
-            </span>
-        ) 
         return (
             <tr>
                 <td>{playlistSong.order}</td>
@@ -53,14 +42,11 @@ class OnePlaylistContainer extends Component {
     }
 
     renderList() {
-        console.log("meow");
-        console.log( _.map(this.state.playlistSongs, this.renderListItem.bind(this)));
         return _.map(this.state.playlistSongs, this.renderListItem.bind(this));
     }
 
 
     render() {
-        console.log("this.state.playlistSongs: ", this.state.playlistSongs);
         if (!this.state.playlistSongs) {
             console.log("loading...")
             return (<div>Loading...</div>);
@@ -88,7 +74,8 @@ class OnePlaylistContainer extends Component {
                     </table>
                 </div>
                 <div>
-                    <AddSongToPlaylistForm playlistId={this.playlistId} />
+                    <AddSongToPlaylistForm playlistId={this.playlistId}
+                                           playlistLength={this.state.playlistSongs.length} />
                 </div>
 
             </div>
