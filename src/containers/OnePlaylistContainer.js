@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import React, { Component } from "react";
 import Navigation from "../components/Navigation";
+import AddSongToPlaylistForm from "../components/AddSongToPlaylistForm";
 import { fetchPlaylistById } from '../actions';
-import { fetchSongById } from '../actions';
-import { fetchPlaylists } from '../actions';
+import { deleteSongFromPlaylist } from '../actions';
 import { convertMS } from '../helpers';
 
 class OnePlaylistContainer extends Component {
@@ -20,7 +20,16 @@ class OnePlaylistContainer extends Component {
         });
     }
 
+    removeSongFromThisPlaylist(songId) {
+        deleteSongFromPlaylist(this.playlistId, songId).then((response) => {
+          console.log(response);
+          window.location.reload(false);
+        });
+    }
+
     renderListItem(playlistSong) {
+        const songSelfArray = playlistSong.songInfo.self.split('/');
+        const songId = songSelfArray[songSelfArray.length - 1];
         const Emoji = props => (
             <span
                 className="emoji"
@@ -30,7 +39,7 @@ class OnePlaylistContainer extends Component {
             >
                 {props.symbol}
             </span>
-        )
+        ) 
         return (
             <tr>
                 <td>{playlistSong.order}</td>
@@ -38,6 +47,7 @@ class OnePlaylistContainer extends Component {
                 <td>{playlistSong.songInfo.artist}</td>
                 <td>{playlistSong.songInfo.album}</td>
                 <td>{convertMS(playlistSong.songInfo.duration)}</td>
+                <td><button onClick={this.removeSongFromThisPlaylist.bind(this, songId)}>Remove</button></td>
             </tr>
               );
     }
@@ -69,12 +79,16 @@ class OnePlaylistContainer extends Component {
                                 <th><span className="glyphicon glyphicon-user"></span> Artist</th>
                                 <th><span className="glyphicon glyphicon-list-alt"></span> Album</th>
                                 <th><span className="glyphicon glyphicon-time"></span> Duration</th>
+                                <th><span className="glyphicon glyphicon-remove"></span> Remove</th>
                             </tr>
                         </thead>
                         <tbody>
                             {this.renderList()}
                         </tbody>
                     </table>
+                </div>
+                <div>
+                    <AddSongToPlaylistForm playlistId={this.playlistId} />
                 </div>
 
             </div>
