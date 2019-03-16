@@ -22,6 +22,7 @@ const Navigation = () => {
                     <li><a href="/stream">Stream</a></li>
                     <li><a href="/songs">Songs</a></li>
                     <li><a href="/playlists">Playlists</a></li>
+                    <li><a href="/about">About</a></li>
                 </ul>
 
                 <div className="nav navbar-nav navbar-right">
