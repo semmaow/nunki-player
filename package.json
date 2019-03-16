@@ -3,6 +3,7 @@
   "proxy": "https://nunki-music.appspot.com",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://nunkimusic.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
@@ -29,5 +30,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/semmaow/nunki-player.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/semmaow/nunki-player/issues"
+  }
 }

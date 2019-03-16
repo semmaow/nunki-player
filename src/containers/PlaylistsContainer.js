@@ -14,7 +14,6 @@ class PlaylistsContainer extends Component {
 
     componentDidMount() {
         fetchPlaylists().then(data => {
-            console.log(data);
             this.setState({ playlists: data.data.items })
         });
     }
@@ -55,7 +54,6 @@ class PlaylistsContainer extends Component {
 
 
     render() {
-        console.log("this.state.playlists: ", this.state.playlists);
         if (!this.state.playlists) {
             console.log("loading...")
             return (<div>Loading...</div>);

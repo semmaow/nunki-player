@@ -34,7 +34,7 @@ export function postPlaylist(playlistName) {
       console.log(response);
     })
     .catch(function (error) {
-      console.log("hit error");
+      console.log("postPlaylist error");
       console.log(error);
     });
 }
@@ -58,3 +58,22 @@ export function uploadSong(name, artist, album, order, source, artwork) {
     });
 }
 
+export function putSongOnPlaylist(playlistId, songId, songOrder) {
+    let data = JSON.stringify({
+      order: songOrder
+    });
+    return axios.put("https://nunki-music.appspot.com/playlists/" + playlistId + "/songs/" + songId, data, {
+      headers: {"Content-Type": "application/json"}
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log("putSongOnPlaylist error");
+      console.log(error);
+    });
+}
+
+export function deleteSongFromPlaylist(playlistId, songId) {
+    return axios.delete("https://nunki-music.appspot.com/playlists/" + playlistId + "/songs/" + songId);
+}

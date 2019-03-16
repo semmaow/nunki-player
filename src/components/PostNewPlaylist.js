@@ -14,7 +14,6 @@ class PostNewPlaylist extends React.Component {
   }
 
   handleSubmit(event) {
-    //alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
     postPlaylist(this.state.value).then(() => {
       window.location.reload(false);
@@ -23,12 +22,16 @@ class PostNewPlaylist extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-        Add a playlist 
-          <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="new playlist name"/>
-        </label>
-        <input type="submit" value="Submit" />
+      <form className="uploadform" onSubmit={this.handleSubmit}>
+        <p>Create a new playlist</p>
+        <div className="form-group">
+          <br/>
+          <div className="input-group">
+            <div className="input-group-addon"></div>
+              <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter new playlist name"/>
+          </div>
+        </div>
+        <button type="submit" value="Submit" className="btn btn-default">Submit</button>
       </form>
     );
   }
