@@ -47,10 +47,10 @@ class AboutContainer extends Component {
                     <div>
                         <div className="id-card rounded">
                             <div className="avatar-wrap float-left">
-                                <img className="round" src="https://oregonstate.instructure.com/images/thumbnails/67639511/Bh0c1OMIawR6CK47ZZshv3OPf65Yto0eGpyUWLOk" alt="Thanhbinh Truong" />
+                                <img className="round" src="https://oregonstate.instructure.com/images/thumbnails/67639511/Bh0c1OMIawR6CK47ZZshv3OPf65Yto0eGpyUWLOk" alt="Michael Truong" />
                             </div>
                             <div className="bio-wrap float-left">
-                                <h2>Thanhbinh Truong</h2>
+                                <h2>Michael Truong</h2>
                                 <h4>Developer</h4>
                                 <br />
                                 <p>I am located in fremont, CA (Bay Area). Before this program, I graduated from UCSB with a bachelors in economics and accounting. Besides studying for classes, I work multiple misc. jobs such as making websites for small businesses, part-time barber and mechanic.</p>
