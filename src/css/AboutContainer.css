@@ -1,0 +1,86 @@
+
+img { 
+  max-width: 100%; 
+box-shadow: 1px 1px 20px 2px rgba(0,0,0,.3);
+  margin: 10px;
+}
+
+div{
+  box-sizing: border-box;
+}
+
+h2, h4{ margin-bottom: 2px;}
+h4 { 
+  margin-top: 0;
+  font-weight: 300;
+  color: #bf7670;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 1.1em;
+}
+
+.rounded{
+    border-radius: 20px;
+}
+
+.round{
+    margin-left: 20%;
+    border-radius: 100%;
+}
+
+.float-left {
+    float: left;
+    display: inline-block;
+    padding: 20px;
+}
+
+.id-card {
+    position: relative;
+    background-color: white;
+    height: 300px;
+    max-width: 70%;
+    margin: 20px auto;
+    box-shadow: 1px 1px 20px 2px rgba(0,0,0,.3);
+}
+.id-card :after, :before{
+    content: "";
+    display:table;
+}
+
+.id-card :after{
+    clear: both;
+}
+
+.avatar-wrap{
+    width: 25%;
+}
+
+.bio-wrap{
+    width: 65%;
+    padding-left: 30px;
+    padding-right: 25px;
+}
+.bio-wrap p {
+    font-size: 1.0em;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, "Arial Narrow", Arial, sans-serif;
+    font-weight: 300;
+}
+
+.links-wrap{
+    width: 100%;
+    background-color: #bf7670;
+    height: 60px;
+    position: absolute;
+    bottom:0;
+    border-radius: 0 0 20px 20px;
+    border-top: 5px solid #663e3b;
+    text-align: center;
+}
+.links-wrap a span { display: none;}
+
+.links-wrap a { 
+    font-size: 1.7em;
+    color: white;
+    margin-right: 4%;
+    transition: all 1s ease; 
+}
