@@ -67,10 +67,9 @@ class AddSongToPlaylistForm extends React.Component {
             <br />
             <br />
             <div className="input-group">
-              <div className="input-group-addon">
+              <div className="input-group-addon"></div>
                 <input name="songOrder" type="text" value={this.state.songOrder} 
                        onChange={this.handleInputChange} />
-              </div>
             </div>
         </div>
         <button type="submit" value="Submit" className="btn btn-default">Add Song</button>

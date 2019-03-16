@@ -27,9 +27,8 @@ class PostNewPlaylist extends React.Component {
         <div className="form-group">
           <br/>
           <div className="input-group">
-            <div className="input-group-addon">
+            <div className="input-group-addon"></div>
               <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter new playlist name"/>
-            </div>
           </div>
         </div>
         <button type="submit" value="Submit" className="btn btn-default">Submit</button>
